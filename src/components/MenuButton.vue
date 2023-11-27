@@ -1,7 +1,7 @@
 <template>
-    <button @click="buttonClickHandler" value={value}>
-        {{  text }}
-    </button>
+  <button v-bind:onClick="buttonClickHandler" :value="buttonValue">
+    {{  text }}
+  </button>
 </template>
 
 <script lang="ts">
@@ -9,13 +9,13 @@ import { defineComponent } from 'vue';
 import router from '../router';
 
 function buttonClickHandler(event: Event) {
-  const buttonValue = (event.target as HTMLButtonElement).value;
+  const clickedButtonValue = (event.target as HTMLButtonElement).value;
 
-  if (buttonValue === 'add') {
+  if (clickedButtonValue === 'add') {
     router.push('/add/transactions');
-  } else if (buttonValue === 'view') {
+  } else if (clickedButtonValue === 'view') {
     router.push('/view/transactions');
-  } else if (buttonValue === 'settings') {
+  } else if (clickedButtonValue === 'settings') {
     router.push('/settings');
   } else {
     window.close();
@@ -26,7 +26,7 @@ export default defineComponent({
   name: 'MenuButton',
   props: {
     text: String,
-    value: String,
+    buttonValue: String,
   },
   methods: {
     buttonClickHandler,
@@ -34,7 +34,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 button {
   width: 250px;
   padding: 10px;
