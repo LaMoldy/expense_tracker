@@ -23,13 +23,22 @@
   text-align: center;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .header {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2em;
   line-height: 25px;
-  text-decoration: underline;
   margin-bottom: 25px;
   color: #313131;
+}
+
+.input-container {
+    position: relative;
+    top: 25%;
+    gap: 10px;
 }
 
 #app {

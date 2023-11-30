@@ -1,5 +1,5 @@
 <template>
-  <button v-bind:onClick="buttonClickHandler" :value="buttonValue">
+  <button v-on:click="buttonClickHandler" :value="buttonValue">
     {{  text }}
   </button>
 </template>
@@ -17,6 +17,8 @@ function buttonClickHandler(event: Event) {
     router.push('/view/transactions');
   } else if (clickedButtonValue === 'settings') {
     router.push('/settings');
+  } else if (clickedButtonValue === 'backSettings') {
+    router.push('/');
   } else {
     window.close();
   }
@@ -39,7 +41,7 @@ button {
   width: 250px;
   padding: 10px;
   border-radius: 10px;
-  border: 0px solid transparent;
+  border: 0 solid transparent;
   font-size: 1em;
   background-color: #0059ff;
   color: white;

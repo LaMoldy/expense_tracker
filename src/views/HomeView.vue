@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-col flex-center" id="menu-container">
+  <div class="flex-col flex-center input-container">
     <h1 class="header">Main Menu</h1>
     <MenuButton text="Add Transaction" buttonValue="add" />
     <MenuButton text="View Transactions" buttonValue="view" />
@@ -19,9 +19,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#menu-container {
-  position: relative;
-  top: 25%;
-  gap: 10px;
-}
+
 </style>
