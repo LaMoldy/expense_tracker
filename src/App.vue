@@ -26,14 +26,15 @@
 .header {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2em;
+  line-height: 25px;
+  text-decoration: underline;
   margin-bottom: 25px;
-  color: #ffffff;
+  color: #313131;
 }
 
 #app {
   width: 100vw;
   height: 100vh;
-  background-color: #21215e;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
