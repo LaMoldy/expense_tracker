@@ -16,6 +16,12 @@ function handleToggle() {
   store.commit('toggleTheme');
 
   // Apply styles
+  const app: HTMLElement | null = document.getElementById('app');
+  if (app) {
+    app.classList.remove('light', 'dark');
+    const theme: string = store.state.darkMode ? 'dark' : 'light';
+    app.classList.add(theme);
+  }
 }
 
 export default defineComponent({

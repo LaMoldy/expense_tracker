@@ -2,6 +2,18 @@
   <router-view/>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'App',
+  beforeMount() {
+    const app: HTMLElement | null = document.getElementById('app');
+    if (app) {
+      app.classList.add('light');
+    }
+  },
+};
+</script>
+
 <style lang="scss">
 * {
   box-sizing: border-box;
@@ -39,6 +51,23 @@
     position: relative;
     top: 25%;
     gap: 10px;
+}
+
+.light {
+  background-color: #fff;
+
+  .header {
+    color: #313131;
+  }
+}
+
+.dark {
+  background-color: #313131;
+  color: white;
+
+  .header {
+    color: #ffffff;
+  }
 }
 
 #app {
