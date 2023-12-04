@@ -16,6 +16,11 @@ export default createStore<State>({
   mutations: {
     toggleTheme(state: State) {
       state.darkMode = !state.darkMode;
+      const darkModeString: string = state.darkMode ? 'dark' : 'light';
+      localStorage.setItem('darkMode', darkModeString);
+    },
+    setTheme(state: State, value: boolean) {
+      state.darkMode = value;
     },
   },
   actions: {

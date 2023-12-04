@@ -3,12 +3,26 @@
 </template>
 
 <script lang="ts">
+import { useStore, Store } from 'vuex';
+import { key, State } from './store';
+
+let store: Store<State>;
+
 export default {
   name: 'App',
+  setup() {
+    store = useStore(key);
+  },
   beforeMount() {
     const app: HTMLElement | null = document.getElementById('app');
     if (app) {
-      app.classList.add('light');
+      const themeValue: string | null = localStorage.getItem('darkMode');
+      if (themeValue) {
+        app.classList.add(themeValue);
+        store.commit('setTheme', themeValue === 'dark');
+      } else {
+        app.classList.add('light');
+      }
     }
   },
 };
