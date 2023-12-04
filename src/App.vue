@@ -44,13 +44,12 @@ export default {
   font-size: 2em;
   line-height: 25px;
   margin-bottom: 25px;
-  color: #313131;
 }
 
 .input-container {
-    position: relative;
-    top: 25%;
-    gap: 10px;
+  position: relative;
+  top: 25%;
+  gap: 10px;
 }
 
 .light {
