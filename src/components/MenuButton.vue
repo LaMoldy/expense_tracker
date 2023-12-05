@@ -40,6 +40,7 @@ export default defineComponent({
 button {
   width: 250px;
   padding: 10px;
+  margin-bottom: 5px;
   border-radius: 10px;
   border: 0 solid transparent;
   font-size: 1em;

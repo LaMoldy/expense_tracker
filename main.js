@@ -21,6 +21,9 @@ const createWindow = () => {
     }),
   );
 
+  mainWindow.menuBarVisible = false;
+  mainWindow.resizable = false;
+
   mainWindow.on('close', () => {
     mainWindow = null;
   });

@@ -43,7 +43,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 #settings-container {
-  gap: 125px;
+  gap: 50px;
 }
 
 #settings-content-container {
