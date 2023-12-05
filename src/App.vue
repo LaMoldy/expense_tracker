@@ -40,6 +40,11 @@ export default {
   flex-direction: column;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
 .flex-center {
   align-items: center;
   justify-content: center;

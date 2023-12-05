@@ -3,8 +3,8 @@
     <div class="flex-col flex-center" id="settings-content-container">
       <h1 class="header">Settings</h1>
       <ThemeToggle />
-      <FileInputButton option="Import Data" v-bind:on-click="importData" />
-      <FileInputButton option="Export Data" />
+      <FileInputButton option="Import Data" name="import" v-bind:on-click="importData" />
+      <FileInputButton option="Export Data" name="export" />
       <WarningButton text="Clear Data" />
     </div>
     <MenuButton text="Back" buttonValue="backSettings" />

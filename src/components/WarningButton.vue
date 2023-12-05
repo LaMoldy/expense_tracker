@@ -8,7 +8,7 @@
 import { defineComponent } from 'vue';
 
 function buttonClickHandler(event: Event) {
-  console.log('clicked');
+  console.log('Event', event);
 }
 
 export default defineComponent({

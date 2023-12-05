@@ -1,25 +1,45 @@
 <template>
-  <div id="input-container">
-    <p class="text-center">{{ option }}</p>
-    <label for="import">
-      <input name="import" id="import" type="file" />
+  <button id="input-button" v-on:click="handleClick(name!)">
+    {{ option }}
+    <label v-bind:for="name">
+      <input v-bind:name="name" v-bind:id="name" type="file" />
     </label>
-  </div>
+  </button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+function clickInput(id: string) {
+  const button: HTMLElement | null = document.getElementById(id);
+  if (button) {
+    button.click();
+  }
+}
+
+function handleClick(buttonName: string) {
+  console.log('here');
+  if (buttonName === 'import') {
+    clickInput('import');
+  } else if (buttonName === 'export') {
+    clickInput('export');
+  }
+}
+
 export default defineComponent({
   name: 'FormButton',
   props: {
     option: String,
+    name: String,
+  },
+  methods: {
+    handleClick,
   },
 });
 </script>
 
-<style lang="scss">
-#input-container {
+<style lang="scss" scoped>
+button {
   width: 250px;
   padding: 10px;
   border-radius: 10px;
