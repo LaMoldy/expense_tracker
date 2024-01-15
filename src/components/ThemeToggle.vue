@@ -1,10 +1,9 @@
 <template>
   <div class="flex-row" id="theme-container">
     <p>Dark Mode</p>
-    <label for="theme" class="text-left switch flex-row">
-      <input id="theme" type="checkbox" v-on:change="handleToggle" v-model="themeValue" />
-      <span class="slider"></span>
-    </label>
+    <input id="switch" type="checkbox" v-on:change="handleToggle" v-model="themeValue" />
+    <!-- eslint-disable-next-line -->
+    <label for="switch"></label>
   </div>
 </template>
 
@@ -57,57 +56,45 @@ export default defineComponent({
   font-size: 1em;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-
-  .input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+    visibility: hidden;
 }
 
-.slider {
-  position: absolute;
-  border-radius: 5px;
+label {
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-animation: .4s;
-  transition: .4s;
-
-  &:before {
-    position: absolute;
-    border-radius: 5px;
-    box-shadow: 0 0 2px 2px #313131;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: -5px;
-    bottom: 1px;
-    background-color: #fff;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
+  text-indent: -9999px;
+  width: 60px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
 }
 
-input {
-  &:checked + .slider {
-    background-color: #2196F3;
-  }
-  &:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  &:checked + .slider:before {
-    transform: translateX(26px);
-    -ms-transform: translateX(26px);
-  }
+label:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
 }
 
+input:checked + label {
+  background: #0059ff;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 60px;
+}
 </style>
