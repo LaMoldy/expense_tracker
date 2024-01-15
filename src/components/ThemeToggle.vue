@@ -56,6 +56,10 @@ export default defineComponent({
   font-size: 1em;
 }
 
+p {
+  font-weight: bold;
+}
+
 input[type=checkbox] {
   height: 0;
   width: 0;
