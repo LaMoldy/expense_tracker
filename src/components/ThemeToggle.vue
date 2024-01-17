@@ -99,6 +99,6 @@ input:checked + label:after {
 }
 
 label:active:after {
-  width: 60px;
+  width: 50px;
 }
 </style>
