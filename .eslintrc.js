@@ -3,6 +3,9 @@ module.exports = {
   env: {
     node: true,
   },
+  settings: {
+    'import/resolver': 'webpack',
+  },
   extends: [
     'plugin:vue/vue3-essential',
     '@vue/airbnb',
